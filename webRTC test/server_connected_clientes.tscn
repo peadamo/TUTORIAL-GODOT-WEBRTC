@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbcck1rs0k5ms"]
+
+[ext_resource type="Script" path="res://server_connected_clientes.gd" id="1_khoun"]
+
+[node name="Server_Connected_Clientes" type="Control"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_khoun")
+
+[node name="Client_ID" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 17.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "ID"
+
+[node name="Client_data_2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -11.5
+offset_right = 25.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Data 2
+"
+
+[node name="Client_data_3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Data 3
+"

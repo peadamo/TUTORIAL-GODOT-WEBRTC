@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6dsb1gnsryav"]
+
+[ext_resource type="PackedScene" uid="uid://tc72pjc5rvhu" path="res://Client.tscn" id="2_h5xa2"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Client" parent="." instance=ExtResource("2_h5xa2")]
+layout_mode = 1

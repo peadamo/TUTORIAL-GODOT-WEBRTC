@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw5lrwwfgal3t"]
+
+[ext_resource type="Script" path="res://lobbieClientGUI.gd" id="1_dy1ax"]
+
+[node name="lobbie" type="Control"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dy1ax")
+
+[node name="lobby_id_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 117.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "ID: 3987018584"
+
+[node name="lobby_player_count" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 22.5
+offset_top = 3.0
+offset_right = 47.5
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1/4"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "JOIN"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HSeparator2" type="HSeparator" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

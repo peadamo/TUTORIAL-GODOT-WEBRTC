@@ -1,0 +1,144 @@
+[gd_scene load_steps=2 format=3 uid="uid://tc72pjc5rvhu"]
+
+[ext_resource type="Script" path="res://Client.gd" id="1_bothf"]
+
+[node name="Client" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 576.0
+offset_bottom = 324.0
+size_flags_vertical = 3
+script = ExtResource("1_bothf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="connect_to_server_button" type="Button" parent="Panel/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Connect To Server"
+
+[node name="Client" type="Label" parent="Panel/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Client - "
+horizontal_alignment = 1
+
+[node name="Client_ID_label" type="Label" parent="Panel/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "##########"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="host_game_button" type="Button" parent="Panel/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Host Game"
+
+[node name="lobby_name_label" type="Label" parent="Panel/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "#############"
+
+[node name="lobbiesArea" type="VBoxContainer" parent="Panel/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="VBoxContainer" parent="Panel/HBoxContainer/VBoxContainer/lobbiesArea"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="Panel/HBoxContainer/VBoxContainer/lobbiesArea/Title"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer/lobbiesArea/Title"]
+layout_mode = 2
+text = "Lobbies"
+horizontal_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="Panel/HBoxContainer/VBoxContainer/lobbiesArea/Title"]
+layout_mode = 2
+
+[node name="lobbiesContainer" type="VBoxContainer" parent="Panel/HBoxContainer/VBoxContainer/lobbiesArea"]
+layout_mode = 2
+
+[node name="Actual_lobby_Area" type="VBoxContainer" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="VBoxContainer" parent="Panel/HBoxContainer/VBoxContainer/Actual_lobby_Area"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="Panel/HBoxContainer/VBoxContainer/Actual_lobby_Area/Title"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer/Actual_lobby_Area/Title"]
+layout_mode = 2
+text = "Actual Lobby"
+horizontal_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="Panel/HBoxContainer/VBoxContainer/Actual_lobby_Area/Title"]
+layout_mode = 2
+
+[node name="players_container" type="VBoxContainer" parent="Panel/HBoxContainer/VBoxContainer/Actual_lobby_Area"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(286, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer/Panel"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 286.0
+offset_bottom = 324.0
+theme_override_constants/separation = 5
+
+[node name="Logs" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer2"]
+layout_mode = 2
+text = "Logs
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/HBoxContainer/Panel/VBoxContainer2"]
+layout_mode = 2
+
+[node name="poke_all_players" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "start"
+
+[connection signal="button_down" from="Panel/HBoxContainer/VBoxContainer/HBoxContainer2/connect_to_server_button" to="." method="_on_connect_to_server_button_button_down"]
+[connection signal="button_down" from="Panel/HBoxContainer/VBoxContainer/HBoxContainer/host_game_button" to="." method="_on_host_game_button_button_down"]
+[connection signal="button_down" from="poke_all_players" to="." method="_on_poke_all_players_button_down"]
